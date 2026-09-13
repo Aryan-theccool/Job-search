@@ -1,0 +1,20 @@
+{
+  "name": "karmendra-job-hunter-engine",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Karmendra AI Job Hunter — local Node.js engine + Next.js dashboard that scans public ATS feeds, scores roles, tailors truthful resumes, and prepares applications.",
+  "scripts": {
+    "cycle": "node engine/cycle.mjs --force",
+    "apply": "node engine/apply.mjs",
+    "apply:live": "node engine/apply.mjs --live",
+    "seed": "node engine/seed.mjs",
+    "scan": "node engine/scan.mjs",
+    "score": "node engine/score.mjs",
+    "tailor": "node engine/tailor.mjs"
+  },
+  "dependencies": {
+    "marked": "^14.1.4",
+    "playwright": "1.58.1"
+  }
+}

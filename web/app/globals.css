@@ -1,0 +1,207 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+/* ------------------------------------------------------------------ */
+/* Karmendra AI Job Hunter — warm "study" design system                */
+/* cream paper · soft sky · sage · warm amber · glass cards            */
+/* no pure black, no pure white                                        */
+/* ------------------------------------------------------------------ */
+
+:root {
+  --font-display: 'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', 'Varela Round', ui-rounded, system-ui, sans-serif;
+  --font-sans: 'Plus Jakarta Sans', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --font-hand: 'Klee One', 'Comic Sans MS', 'Segoe Print', cursive;
+
+  /* day theme */
+  --paper: #f7f2e7;
+  --paper-2: #efe8d8;
+  --ink: #2e2b24;
+  --ink-muted: #736c5c;
+  --ink-faint: #a49b87;
+  --sky: #a7c7da;
+  --sky-soft: #dcebf3;
+  --sage: #9db491;
+  --sage-soft: #e0e9d8;
+  --amber: #e2a84d;
+  --amber-soft: #f6e8cd;
+  --rose: #cf8b8b;
+  --rose-soft: #f3dede;
+  --border: rgba(46, 43, 36, 0.12);
+  --border-strong: rgba(46, 43, 36, 0.22);
+  --glass: rgba(255, 253, 247, 0.62);
+  --glass-strong: rgba(255, 253, 247, 0.86);
+  --shadow-soft: 0 10px 30px -12px rgba(78, 66, 40, 0.18), 0 2px 6px -2px rgba(78, 66, 40, 0.08);
+  --shadow-pop: 0 24px 60px -20px rgba(78, 66, 40, 0.3);
+
+  --grade-a: #3e7d4f;
+  --grade-b: #7a9a3a;
+  --grade-c: #d9a441;
+  --grade-d: #cf7f3a;
+  --grade-e: #c46a4a;
+  --grade-f: #b34a4a;
+
+  --status-new: #7fa3c0;
+  --status-scored: #9db491;
+  --status-cv: #e2a84d;
+  --status-needs: #cf6f6f;
+  --status-applied: #8f7fc0;
+  --status-interview: #4f9d8b;
+  --status-offer: #3e7d4f;
+  --status-rejected: #b34a4a;
+}
+
+[data-theme='dusk'] {
+  --paper: #23222b;
+  --paper-2: #2b2a35;
+  --ink: #ece7db;
+  --ink-muted: #a49d8f;
+  --ink-faint: #756f63;
+  --sky: #7fa3c0;
+  --sky-soft: #313b47;
+  --sage: #8fa987;
+  --sage-soft: #2f382d;
+  --amber: #d9a441;
+  --amber-soft: #3d3423;
+  --rose: #c47f7f;
+  --rose-soft: #402c2c;
+  --border: rgba(236, 231, 219, 0.14);
+  --border-strong: rgba(236, 231, 219, 0.26);
+  --glass: rgba(48, 46, 58, 0.6);
+  --glass-strong: rgba(44, 42, 54, 0.88);
+  --shadow-soft: 0 10px 30px -12px rgba(0, 0, 0, 0.5), 0 2px 6px -2px rgba(0, 0, 0, 0.35);
+  --shadow-pop: 0 24px 60px -20px rgba(0, 0, 0, 0.65);
+}
+
+/* map semantic tokens into Tailwind 4 theme */
+@theme inline {
+  --color-paper: var(--paper);
+  --color-paper-2: var(--paper-2);
+  --color-ink: var(--ink);
+  --color-ink-muted: var(--ink-muted);
+  --color-ink-faint: var(--ink-faint);
+  --color-sky: var(--sky);
+  --color-sky-soft: var(--sky-soft);
+  --color-sage: var(--sage);
+  --color-sage-soft: var(--sage-soft);
+  --color-amber: var(--amber);
+  --color-amber-soft: var(--amber-soft);
+  --color-rose: var(--rose);
+  --color-rose-soft: var(--rose-soft);
+  --color-line: var(--border);
+  --color-line-strong: var(--border-strong);
+
+  --font-sans: var(--font-sans);
+  --font-display: var(--font-display);
+  --font-hand: var(--font-hand);
+
+  --radius-4xl: 2rem;
+  --radius-5xl: 2.75rem;
+
+  --animate-float: float 9s ease-in-out infinite;
+  --animate-float-slow: float 14s ease-in-out infinite;
+  --animate-fade-up: fade-up 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+  --animate-fade-in: fade-in 0.35s ease both;
+  --animate-scale-in: scale-in 0.22s cubic-bezier(0.22, 1, 0.36, 1) both;
+  --animate-slide-in-right: slide-in-right 0.3s cubic-bezier(0.22, 1, 0.36, 1) both;
+  --animate-pulse-soft: pulse-soft 2.4s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-14px) rotate(1.2deg); }
+}
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes scale-in {
+  from { opacity: 0; transform: scale(0.96); }
+  to { opacity: 1; transform: scale(1); }
+}
+@keyframes slide-in-right {
+  from { opacity: 0.4; transform: translateX(48px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+@keyframes pulse-soft {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.55; }
+}
+@keyframes scene-drift {
+  0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+  50% { transform: translate3d(3%, -2%, 0) scale(1.05); }
+}
+
+@layer base {
+  * {
+    border-color: var(--border);
+  }
+  html {
+    font-family: var(--font-sans);
+  }
+  body {
+    background-color: var(--paper);
+    color: var(--ink);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    min-height: 100vh;
+  }
+  ::selection {
+    background: var(--amber-soft);
+    color: var(--ink);
+  }
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: var(--border-strong) transparent;
+  }
+}
+
+@layer utilities {
+  .glass {
+    background: var(--glass);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid var(--border);
+  }
+  .glass-strong {
+    background: var(--glass-strong);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--border);
+  }
+  .paper-texture {
+    background-image: radial-gradient(rgba(120, 105, 70, 0.05) 1px, transparent 1px);
+    background-size: 22px 22px;
+  }
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+  .shadow-pop {
+    box-shadow: var(--shadow-pop);
+  }
+  .font-display {
+    font-family: var(--font-display);
+  }
+  .font-hand {
+    font-family: var(--font-hand);
+  }
+  .scene-drift {
+    animation: scene-drift 26s ease-in-out infinite;
+  }
+}
+
+/* Markdown rendering (resumes) */
+.md-body h1 { font-size: 1.45rem; font-weight: 800; margin: 0.4em 0 0.5em; font-family: var(--font-display); }
+.md-body h2 { font-size: 1.05rem; font-weight: 700; margin: 1.1em 0 0.4em; padding-bottom: 0.25em; border-bottom: 1.5px solid var(--border); }
+.md-body h3 { font-size: 0.95rem; font-weight: 700; margin: 0.9em 0 0.3em; }
+.md-body p { margin: 0.45em 0; line-height: 1.6; }
+.md-body ul { margin: 0.45em 0; padding-left: 1.2em; list-style: disc; }
+.md-body li { margin: 0.22em 0; line-height: 1.55; }
+.md-body strong { font-weight: 700; }
+.md-body em { color: var(--ink-muted); font-size: 0.9em; }
+.md-body hr { border: none; border-top: 1px solid var(--border); margin: 1em 0; }
+.md-body blockquote { border-left: 3px solid var(--amber); padding: 0.2em 0.9em; background: var(--amber-soft); border-radius: 0.5em; margin: 0.6em 0; color: var(--ink-muted); }
+.md-body a { color: var(--sky); text-decoration: underline; }
